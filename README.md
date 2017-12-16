@@ -1,8 +1,8 @@
 # MAPs API
-This repository contains different map-services' API usage examples.
+This repository contains different map-services' API usage [examples](examples/).
 
 # Usage
-Replace `MY_API_KEY` with the API_KEY of your service in `index.html` file. 
+Copy `env.example.js` into `env.js` and replace `API_KEY` variable's value with yours.
 
 To run server install dependencies and execute npm command
 ```
