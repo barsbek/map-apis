@@ -5,17 +5,7 @@
   <title>Google API</title>
   <link rel="stylesheet" href="src/main.css"></link>
   <script src="env.js"></script>
-  <script src="examples/google-route.js"></script>
-  <script>
-    var scriptTag = document.createElement('script');
-    scriptTag.src = "https://maps.googleapis.com/maps/api/js?key=" + env.API_KEY +
-      "&callback=initMap&libraries=drawing";
-    scriptTag.async = true;
-    scriptTag.defer = true;
-    window.addEventListener('DOMContentLoaded',
-      () => document.body.appendChild(scriptTag)
-    );
-  </script>
+  <script src="src/load-scripts.js"></script>
 </head>
 <body>
   <div class="map-style hidden">
