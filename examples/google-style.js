@@ -1,3 +1,31 @@
+function initMap() {
+  var map = new google.maps.Map(document.getElementById('map'), {
+    center: {lat: 41.85, lng: -87.65},
+    zoom: 7,
+    mapTypeControl: false
+  });
+
+  initStyleSelector(map);
+}
+
+function initStyleSelector(map) {
+  var styleSelector = document.querySelector('.map-style-select');
+
+  Object.keys(styles).forEach((style, i) => {
+    var selected = i == 0 ? true : false;
+    styleSelector.appendChild( new Option(style, style, selected) );
+  });
+  
+  map.controls[google.maps.ControlPosition.TOP_LEFT].push(styleSelector);
+  map.setOptions({styles: styles[styleSelector.value]})
+
+  styleSelector.addEventListener('change', () => {
+    map.setOptions({styles: styles[styleSelector.value]})
+  });
+
+  map.addListener('tilesloaded', () => styleSelector.classList.remove('hidden'));
+}
+
 var styles = {
   default: null,
   silver: [
